@@ -1,5 +1,6 @@
 package com.ssafyns.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -28,6 +29,7 @@ public class UserDAOImpl implements UserDAO {
 		session.update("user.UpdateUser", user);
 	}
 
+	// 실제 탈퇴할 때 삭제하는 게 아니라 isleave를 1로 바꿔주기만 하면 된다.
 	@Override
 	public void deleteUser(String user_id) {
 		session.delete("user.DeleteUser", user_id);

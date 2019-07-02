@@ -42,5 +42,18 @@ public class UserServiceImpl implements UserService {
 	public List<User> getUserList() {
 		return userDao.selectUserList();
 	}
+	
+	public boolean checkDuplicatedId(String user_id) {
+		try {
+			userDao.selectUser(user_id);
+		}catch(Exception e){
+			return false;
+		}
+		return true;
+	}
+	
+	
+	
+	
 
 }

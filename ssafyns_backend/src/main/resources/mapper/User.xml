@@ -27,7 +27,9 @@
 	</update>
 
 	<delete id="DeleteUser" parameterType="String">
-		delete from user
+		update user
+		set
+		user_isleave=1
 		where user_id = #{user_id}
 	</delete>
 
